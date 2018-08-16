@@ -1,5 +1,6 @@
-squares=[]
-print("Empty List",squares)
-for i in range(10):
-	squares.append(i**2)
-print("The List of Squares",squares)
+x = int(input())
+y = int(input())
+z = int(input())
+n = int(input())
+ar = [[X, Y, Z] for X in range(x+1) for Y in range(y+1) for Z in range(z+1) if X + Y + Z != n]
+print(ar)
