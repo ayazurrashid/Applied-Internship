@@ -1,9 +1,5 @@
 n = int(input())
-runner=[]
-runner=[input() for i in range(n)]
-print(runner)
-top=max(runner)
-while max(runner)==top:
-	runner.remove(max(runner))
-second_highest = max(runner)
-print(second_highest)
+runner=list(map(int,input().split(" ")))
+run=list(set(runner))
+run.sort()
+print(run[-2])
