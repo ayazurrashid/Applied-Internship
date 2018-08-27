@@ -1,0 +1,5 @@
+n = int(input())
+runner=list(map(int,input().split(" ")))
+run=list(set(runner))
+run.sort()
+print(run[-2])
