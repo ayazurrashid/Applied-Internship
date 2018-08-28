@@ -1,0 +1,181 @@
+<html lang="en us" class="gr__jkerationghat_tk"><head>
+    <title>E-Ration Ghat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- FontAwesome Icon Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--///////////////////////////////////////////////////////////////////-->
+    <link rel="stylesheet" type="text/css" href="css/reg.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/blink.css">
+    <!-- <script src="scripts/slides.js"></script> -->
+    <script src="scripts/clock.js"></script>
+    <script src="scripts/picpreview.js"></script>
+    <script src="scripts/changeElem.js"></script>
+    <script src="scripts/changeTxt.js"></script>
+    <script src="scripts/checkTxt.js"></script>
+  </head>
+  <body data-gr-c-s-loaded="true">
+     <header class="container-fluid" id="logo">
+      <div class="row">
+        <div class="col-sm-6">
+          <a href="index.html"><img src="images/logo.png" title="Logo" alt="Logo"></a>
+        </div>
+        <div class="col-sm-6">
+          <p class="font-weight-bold text-right pt-3 pr-0" id="clock">11:12:41 AM<br>Tue Aug 21 2018</p>
+        </div>
+      </div>
+    </header>
+    <nav class="navbar sticky-top navbar-expand-sm bg-success p-0 navbar-dark ">
+      <!-- Brand -->
+      <a class=" nav-link btn bg-success text-center text-white font-weight-bold  ml-5" href="index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ">
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <button class="nav-link btn btn-success text-center font-weight-bold dropdown-toggle pr-3 pl-3 mr-5 text-light" id="navbardrop" data-toggle="dropdown">
+              Registration
+            </button>
+            <div class="dropdown-menu mr-5">
+              <a class="dropdown-item" href="reg.html">New Registration</a>
+              <a class="dropdown-item" href="checkstatus.html">Check Status</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <button class="nav-link btn btn-success text-center font-weight-bold btn dropdown-toggle pl-3 pr-3 mr-5 text-light" id="navbardrop" data-toggle="dropdown">
+              Order
+            </button>
+            <div class="dropdown-menu mr-5">
+              <a class="dropdown-item" href="login.html">New Order</a>
+              <a class="dropdown-item" href="trackorder.html">Track Order</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <button class="nav-link btn btn-success text-center font-weight-bold dropdown-toggle pl-3 pr-3 mr-5 text-light" id="navbardrop" data-toggle="dropdown">
+              Admin
+            </button>
+            <div class="dropdown-menu mr-5">
+              <a class="dropdown-item" href="fpologin.html">Food Point Officer</a>
+              <a class="dropdown-item" href="capdlogin.html">CAPD Official</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <button class="nav-link btn btn-success text-center font-weight-bold dropdown-toggle pr-3 pl-3 mr-5 text-light" id="navbardrop" data-toggle="dropdown">
+              Help
+            </button>
+            <div class="dropdown-menu mr-5">
+              <a class="dropdown-item" href="contacts.html">Contacts</a>
+              <a class="dropdown-item" href="feedback.html">Feedback</a>
+              <a class="dropdown-item" href="aboutus.html">About Us</a>
+              <a class="dropdown-item" href="faq.html">FAQ</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <!--Navigation Bar End////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <section class="sec1">
+      &nbsp;
+      <div class="reg">
+        <form name="frmreg" class="reg-form" enctype="multipart/form-data" method="post" action="pages/reg.php">
+          <!--<h1>Department Of Consumer Affairs And Public Distribution</h1><hr>-->
+          <h1>Application Form For Ration Card</h1>
+          <h4 class="blinking">Submit Your Details Below</h4>
+          <div class="form-input">
+            <div id="files">
+              <label for="file"><img id="dispImg" src="images/avatar.png" name="photo" alt="photograph"></label><br>
+              <input type="hidden" name="imgsrc" id="imgsrc">
+              <input id="file" type="file" name="filetoUpload" accept=".jpg, .jpeg, .png" onchange="preview_image(event)" required="">
+              <br>
+            </div><br>
+            <!--<button style="width:90px;padding:2px;" onclick="upload()">Upload</button>-->
+            <div id="inputs">
+                <label class="lbl_input">Identity proof:<span>*</span></label>
+                <select name="identity" id="sel1" onchange="selEnable1()" required="">
+                <option value="">Select</option>
+                <option value="Aadhaar">Aadhaar Card</option>
+                <option value="Voter ID">Election Card</option>
+                <option value="Other ID">Other</option>
+                </select><br>
+                <label class="lbl_input" id="lbl_card">Identity Card No:<span>*</span></label>
+                <input type="text" id="card" name="cardno" style="cursor: not-allowed;" readonly="true" required=""><br>
+                <label class="lbl_input" for="name">Name of Head of Family:<span>*</span></label>
+                <input type="text" id="name" name="hof" required="">
+                <label class="lbl_input" for="sdw">S/o-D/o-W/o:<span>*</span></label>
+                <input type="text" name="sdw" id="sdw" required=""><br>
+                <label class="lbl_input" for="addr">Permanent Address:<span>*</span></label>
+                <input type="text" id="addr" name="p-address" required="">
+                <label class="lbl_input">District:<span>*</span></label>
+                <select name="District" onchange="selEnable2()" id="sel2" required="">
+                <option value="">Select</option>
+                <option>Anantnag</option>
+                <option>Bandipora</option>
+                <option>Baramulla</option>
+                <option>Budgam</option>
+                <option>Ganderbal</option>
+                <option>Kulgam</option>
+                <option>Kupwara</option>
+                <option>Pulwama</option>
+                <option>Shopian</option>
+                <option>Srinagar(South)</option>
+                <option>Srinagar(North)</option>
+                </select>
+                <label class="lbl_input" for="city">Town/Village/City:<span>*</span></label>
+                <input type="text" id="city" name="city" style="cursor: not-allowed;" readonly="true" required=""><br>
+                <label class="lbl_input" for="pin">Pincode:<span>*</span></label>
+                <input type="text" name="pin" maxlength="6" id="pin" style="cursor: not-allowed;" readonly="true" onfocus="cnumber(this.id)" required=""><br>
+                <label class="lbl_input" for="mob">Mobile no:<span>*</span></label>
+                <input type="text" name="mob" maxlength="10" id="mob" onfocus="cnumber(this.id)" required=""><br>
+                <label class="lbl_input" for="email">Email-ID:<span>*</span></label>
+                <input type="email" name="email" id="email" required=""><br>
+                <label class="lbl_input" for="dob">Date of Birth:<span>*</span></label>
+                <input type="date" name="dob" id="dob" required=""><br>
+                <label class="lbl_input" for="nof">No. of Family Members:<span>*</span></label>
+                <input type="text" name="nof" id="nof" onfocus="cnumber(this.id)" required=""><br>
+                <label class="lbl_input">Family Income<span>*</span></label>
+                <select name="Income" required="">
+                <option value="">Select</option>
+                <option value="<10000">Below 10000</option>
+                <option>10000-27000</option>
+                <option>27000-45000</option>
+                <option value=">46000">Above 45000</option>
+                </select><br>
+              </div>
+              <label class="lbl_input">Gender:<span>*</span></label>
+                <input type="radio" id="r1" name="gender" value="Male" onkeypress="checkSubmit(event, submit.id)" required=""><label id="lbls" for="r1">Male</label>
+                <input type="radio" id="r2" name="gender" value="Female" onkeypress="checkSubmit(event, submit.id)" required=""><label id="lbls" for="r2">Female</label>
+                <br>
+                <label class="lbl_input"><input id="chkagree" name="agree" type="checkbox" value="agreed" onchange="clearMsg()" onkeypress="checkSubmit(event, submit.id)"></label>
+                <label id="lbls" for="chkagree">I accept the <a href="test.html" target="_blank">terms and conditions.</a></label><label id="msg_lbl"></label><br><br>
+              <div id="buttondiv">
+                <input type="button" id="sub_button" name="submit" value="SUBMIT" onclick="check()">
+                <input type="reset" name="reset" value="RESET" onclick="clearMsg()">
+              </div>
+            </div>
+          </form></div>
+        
+      
+      &nbsp;
+    </section>
+    <!--Footer-->
+     <div class="footer bg-success font-weight-bold p-3 text-white text-center">
+      <p>© E-Ration Ghat all rights reserved</p>
+      <p>Website Designed &amp; Developed By <a class="font-weight-bold text-white text-center" href="adminportal.html">Mohammad Khateeb, Ayaz Ur Rashid, Amir Hassan Khan</a>
+      </p><br>
+    </div>
