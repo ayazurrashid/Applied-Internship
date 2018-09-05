@@ -52,13 +52,27 @@ class database:
 
 i1=database('a','b','mytestdb','postgres','ayaz@5553','localhost')
 i1.connect()
-i1.select_query()
-#i1.insert_query()
-#i1.update_query()
-#i1.select_query()
-i1.delete_query()
-i1.commit()
-i1.select_query()
-i1.delete_query()
-i1.commit()
-i1.connclose()
+print("1-select")
+print("2-Insert")
+print("3-Update")
+print("4-delete")
+print("5-commit")
+print("6-close")
+n=int(input())
+if n==1:
+	i1.select_query()
+	n=int(input())
+elif n==2:
+	i1.insert_query()
+	n=int(input())
+elif n==3:
+	i1.update_query()
+	n=int(input())
+elif n==4:
+	i1.delete_query()
+	n=int(input())
+elif n==5:
+	i1.commit()
+	n=int(input())
+else:
+	i1.connclose()

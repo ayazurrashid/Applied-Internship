@@ -45,9 +45,10 @@ class database:
 
 c1=database('a','b','mytestdb','postgres','ayaz@5553','localhost')
 c1.connect()
-c1.createtable('table2',{'col1':'int','col2':'text'})
-c1.droptable(input("Enter the table name"))
+c1.createtable(input("table name to be created: "),{'col1':'int','col2':'text'})
 c1.commit()
 c1.showtables()
+c1.droptable(input("Enter the table name to be drop: "))
 c1.commit()
+c1.showtables()
 c1.connclose()
