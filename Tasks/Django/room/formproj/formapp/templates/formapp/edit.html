@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="/formapp/update/{{company.id}}" method="POST">
+		{% csrf_token %}
+		<label for="name">Name: <input type="text" name="name" id="name" value="{{company.name}}">
+		</label>
+		<label for="title">Title: <input type="text" name="title" id="title" value="{{company.title}}">
+		</label>
+		<label for="address">Address: <input type="text" name="address" id="address" value="{{company.address}}">
+		</label>
+		<label for="city">City: <input type="text" name="city" id="city" value="{{company.city}}">
+		</label>
+		<label for="pincode">Pincode: <input type="text" name="pincode" id="pincode" value="{{company.pincode}}">
+		</label>
+		<label for="discription">Discription: <input type="text" name="discription" id="discription" value="{{company.discription}}">
+		</label>
+		<label for="email">Email: <input type="text" name="email" id="email" value="{{company.email}}">
+		</label>
+		<label for="url">Url: <input type="text" name="url" id="url" value="{{company.url}}">
+		</label>
+		<label for="password">Password: <input type="password" name="password" id="password" value="{{company.password}}">
+		</label>
+		<input type="submit" value="Update">
+
+</body>
+</html>
